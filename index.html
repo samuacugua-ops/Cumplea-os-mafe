@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños Mafe</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;500&display=swap');
+
+        body {
+            background-color: #ffdae9; /* Rosado suave */
+            margin: 0;
+            padding: 0;
+            font-family: 'Quicksand', sans-serif;
+            color: #5d4037;
+            overflow-x: hidden;
+        }
+
+        /* Overlay inicial */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffdae9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 1s ease;
+        }
+
+        #overlay h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #ff4d6d;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-start {
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            background-color: #ff8fab;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Dancing Script', cursive;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .btn-start:hover { transform: scale(1.1); background-color: #fb6f92; }
+
+        /* Botón de Música Flotante */
+        #musicToggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ff8fab;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 100;
+            display: none; /* Se muestra al iniciar */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+
+        #musicToggle:hover { background-color: #fb6f92; }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 50px 20px;
+            position: relative;
+            min-height: 250vh;
+        }
+
+        .side-photos {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 250px;
+            padding-top: 100px;
+        }
+
+        .left { margin-right: 50px; }
+        .right { margin-left: 50px; }
+
+        .side-photos img {
+            width: 100%;
+            border-radius: 15px;
+            border: 8px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .text-column {
+            max-width: 650px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 60px;
+            border-radius: 40px;
+            text-align: center;
+            line-height: 1.8;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            z-index: 10;
+            align-self: flex-start;
+            margin-top: 50px;
+        }
+
+        h1 { font-family: 'Dancing Script', cursive; font-size: 3.5rem; color: #ff4d6d; margin-bottom: 30px; }
+        p { font-size: 1.3rem; margin-bottom: 25px; color: #4a4a4a; }
+
+        .nasa-section { margin: 40px 0; padding: 20px; background: #fff; border-radius: 20px; }
+        .nasa-img { width: 100%; border-radius: 10px; }
+        .caption { font-style: italic; font-size: 0.95rem; color: #888; }
+
+        footer { margin-top: 60px; font-size: 1.1rem; color: #ff4d6d; font-family: 'Dancing Script', cursive; font-weight: bold; }
+
+        @media (max-width: 1100px) { .side-photos { display: none; } .text-column { width: 95%; padding: 30px; } }
+    </style>
+</head>
+<body>
+
+    <div id="overlay">
+        <h2>Hola Chérie...</h2>
+        <button class="btn-start" onclick="startExperience()">Abrir tu regalo digital ❤️</button>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="Elvis Presley - Can't Help Falling In Love (Official Audio).mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="musicToggle" onclick="toggleMusic()">🔊</button>
+
+    <div class="container">
+        <div class="side-photos left">
+            <img src="image_10.png">
+            <img src="image_1.png">
+            <img src="image_2.png">
+            <img src="image_3.png">
+            <img src="image_4.png">
+        </div>
+
+        <div class="text-column">
+            <h1>¡Feliz Cumpleaños, Mafe! 🎂</h1>
+            <p>¿Cómo estás, mi vida? ¡Feliz cumpleaños número 22! Desearía poder estar físicamente contigo ahora mismo, pero por mientras te mando un besito y un abrazote gigante.</p>
+
+            <div class="nasa-section">
+                <img src="image_6.png" class="nasa-img">
+                <p class="caption">"Así se veía el universo el 6 de octubre de 2024, el día que nuestra historia comenzó."</p>
+            </div>
+
+            <p>Hoy que es tu cumpleaños quiero darte las gracias por muchas cosas. Aunque tú no lo creas, me has salvado muchas veces.</p>
+            <p>Tú misma sabes cómo he estado de mal con los turnos de trabajo, pero siempre que tengo algo extra, lo primero que quiero es gastarlo en ti.</p>
+            <p>Cuando me siento deprimido, cuando peleo con mi madre o tengo un mal día, pienso en ti. Escucho la playlist que me hiciste, leo las carticas que me mandaste y todo mejora. Eres mi primer pensamiento del día, todo el día estás en mi mente y eres también el último pensamiento de mi noche.</p>
+            
+            <img src="image_10.png" style="width:80%; border-radius: 20px; margin: 20px 0;">
+
+            <p>Solo espero con ansias el día que te vea en persona y te pueda abrazar y besar todo lo que quiero.</p>
+            <p>Quiero poder montar el negocio que sueño para tener los medios y cumplirte todos los caprichos y gustos que te mereces; hacerte el desayuno en las mañanas y pasar el resto de mi vida contigo.</p>
+
+            <p style="font-weight: 500; font-size: 1.5rem; color: #ff4d6d; margin-top: 40px;">Te amo demasiado. ❤️</p>
+            <footer>Con mucho cariño,<br>tu novio y futuro esposo.</footer>
+        </div>
+
+        <div class="side-photos right">
+            <img src="image_5.png">
+            <img src="image_7.png">
+            <img src="image_8.png">
+            <img src="image_2.png">
+            <img src="image_1.png">
+        </div>
+    </div>
+
+    <script>
+        const music = document.getElementById('bgMusic');
+        const musicBtn = document.getElementById('musicToggle');
+
+        function startExperience() {
+            const overlay = document.getElementById('overlay');
+            overlay.style.opacity = '0';
+            setTimeout(() => { 
+                overlay.style.display = 'none'; 
+                musicBtn.style.display = 'block'; // Mostrar botón de música
+            }, 1000);
+
+            music.play();
+
+            const duration = 15000; 
+            const target = document.body.scrollHeight;
+            const startTime = performance.now();
+
+            function autoScroll(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                window.scrollTo(0, target * progress);
+
+                if (progress < 1) {
+                    window.requestAnimationFrame(autoScroll);
+                }
+            }
+
+            setTimeout(() => {
+                window.requestAnimationFrame(autoScroll);
+            }, 1500); 
+        }
+
+        function toggleMusic() {
+            if (music.paused) {
+                music.play();
+                musicBtn.textContent = '🔊';
+            } else {
+                music.pause();
+                musicBtn.textContent = '🔇';
+            }
+        }
+    </script>
+</body>
+</html>
