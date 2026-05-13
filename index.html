@@ -68,13 +68,10 @@
             border: none;
             cursor: pointer;
             z-index: 100;
-            display: none; /* Se muestra al iniciar */
+            display: none;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             font-size: 1.2rem;
-            transition: background-color 0.3s;
         }
-
-        #musicToggle:hover { background-color: #fb6f92; }
 
         .container {
             display: flex;
@@ -122,6 +119,16 @@
         .nasa-img { width: 100%; border-radius: 10px; }
         .caption { font-style: italic; font-size: 0.95rem; color: #888; }
 
+        .multilingual {
+            font-style: italic;
+            color: #ff4d6d;
+            font-weight: 500;
+            margin: 30px 0;
+            padding: 15px;
+            border-top: 1px solid #ffdae9;
+            border-bottom: 1px solid #ffdae9;
+        }
+
         footer { margin-top: 60px; font-size: 1.1rem; color: #ff4d6d; font-family: 'Dancing Script', cursive; font-weight: bold; }
 
         @media (max-width: 1100px) { .side-photos { display: none; } .text-column { width: 95%; padding: 30px; } }
@@ -158,16 +165,19 @@
                 <p class="caption">"Así se veía el universo el 6 de octubre de 2024, el día que nuestra historia comenzó."</p>
             </div>
 
-            <p>Hoy que es tu cumpleaños quiero darte las gracias por muchas cosas. Aunque tú no lo creas, me has salvado muchas veces.</p>
-            <p>Tú misma sabes cómo he estado de mal con los turnos de trabajo, pero siempre que tengo algo extra, lo primero que quiero es gastarlo en ti.</p>
+            <p>Hoy que es tu cumpleaños quiero darte las gracias por muchas cosas. Aunque tú no lo creas, me has salvado muchas veces. Tú misma sabes cómo he estado de mal con los turnos de trabajo, pero siempre que tengo algo extra, lo primero que quiero es gastarlo en ti.</p>
+            
             <p>Cuando me siento deprimido, cuando peleo con mi madre o tengo un mal día, pienso en ti. Escucho la playlist que me hiciste, leo las carticas que me mandaste y todo mejora. Eres mi primer pensamiento del día, todo el día estás en mi mente y eres también el último pensamiento de mi noche.</p>
             
             <img src="image_10.png" style="width:80%; border-radius: 20px; margin: 20px 0;">
 
-            <p>Solo espero con ansias el día que te vea en persona y te pueda abrazar y besar todo lo que quiero.</p>
-            <p>Quiero poder montar el negocio que sueño para tener los medios y cumplirte todos los caprichos y gustos que te mereces; hacerte el desayuno en las mañanas y pasar el resto de mi vida contigo.</p>
+            <p>Solo espero con ansias el día que te vea en persona y te pueda abrazar y besar todo lo que quiero. Quiero poder montar el negocio que sueño para tener los medios y cumplirte todos los caprichos y gustos que te mereces; hacerte el desayuno en las mañanas y pasar el resto de mi vida contigo.</p>
 
-            <p style="font-weight: 500; font-size: 1.5rem; color: #ff4d6d; margin-top: 40px;">Te amo demasiado. ❤️</p>
+            <div class="multilingual">
+                "In all languages, I can say to you: Ti amo tantissimo, perché sei l'amore della mia vita. Soshite, watashi wa genzai mo mirai mo anata to tomoni sugoshitai (y quiero pasar mi presente y futuro contigo)."
+            </div>
+
+            <p style="font-weight: 500; font-size: 1.5rem; color: #ff4d6d;">Te amo demasiado. ❤️</p>
             <footer>Con mucho cariño,<br>tu novio y futuro esposo.</footer>
         </div>
 
@@ -189,12 +199,12 @@
             overlay.style.opacity = '0';
             setTimeout(() => { 
                 overlay.style.display = 'none'; 
-                musicBtn.style.display = 'block'; // Mostrar botón de música
+                musicBtn.style.display = 'block';
             }, 1000);
 
             music.play();
 
-            const duration = 15000; 
+            const duration = 15000; // 60 segundos de bajada lenta
             const target = document.body.scrollHeight;
             const startTime = performance.now();
 
